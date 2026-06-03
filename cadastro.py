@@ -86,3 +86,14 @@ def cadastrar_aluno():
         print("\n  ❌ Idade inválida!")
         pausar()
         return 
+
+ # Exibir turnos (TUPLA)
+    print("\n  Turnos disponíveis:")
+    for i, turno in enumerate(TURNOS, 1):
+        print(f"    {i}. {turno}")
+ 
+    try:
+        opcao_turno = int(input("  Escolha o turno (1-3): "))
+        turno = TURNOS[opcao_turno - 1] if 1 <= opcao_turno <= 3 else "Manhã"
+    except (ValueError, IndexError):
+        turno = "Manhã"
