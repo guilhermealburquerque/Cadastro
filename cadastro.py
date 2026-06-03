@@ -151,3 +151,34 @@ def consultar_aluno():
             print(f"    Nota {i}: {nota:.1f} — {classificar_nota(nota)}")
  
     pausar()
+
+def lancar_nota():
+    """Lança nota para um aluno."""
+    cabecalho("LANÇAR NOTA")
+ 
+    ra = input("  RA do aluno: ").strip().upper()
+ 
+    if ra not in alunos:
+        print("\n  ❌ Aluno não encontrado.")
+        pausar()
+        return
+ 
+    try:
+        nota = float(input(f"  Digite a nota de {alunos[ra]['nome']} (0 a 10): "))
+    except ValueError:
+        print("\n  ❌ Nota inválida!")
+        pausar()
+        return
+ 
+    if 0 <= nota <= 10:
+        alunos[ra]['notas'].append(nota)
+        historico.append(f"Nota {nota} lançada para {alunos[ra]['nome']} (RA: {ra})")
+        media = calcular_media(ra)
+        situacao = "Aprovado ✅" if media >= 6 else "Reprovado ❌"
+        print(f"\n  ✅ Nota lançada! Classificação: {classificar_nota(nota)}")
+        print(f"  Nova média: {media:.1f} — {situacao}")
+    else:
+        print("\n  ❌ Nota deve ser entre 0 e 10.")
+ 
+    pausar()
+
