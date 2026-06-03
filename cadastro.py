@@ -230,3 +230,44 @@ def listar_cursos():
         print()
  
     pausar()
+
+def matricular_aluno():
+    """Matricula um aluno em um curso."""
+    cabecalho("MATRICULAR ALUNO")
+ 
+    if not alunos:
+        print("  Nenhum aluno cadastrado.")
+        pausar()
+        return
+ 
+    if not cursos:
+        print("  Nenhum curso cadastrado.")
+        pausar()
+        return
+ 
+    ra = input("  RA do aluno: ").strip().upper()
+ 
+    if ra not in alunos:
+        print("\n  ❌ Aluno não encontrado.")
+        pausar()
+        return
+ 
+    listar_cursos()
+    codigo = input("  Código do curso para matrícula: ").strip().upper()
+ 
+    if codigo not in cursos:
+        print("\n  ❌ Curso não encontrado.")
+        pausar()
+        return
+ 
+    nome_curso = cursos[codigo]['nome']
+ 
+    if nome_curso in alunos[ra]['cursos']:
+        print(f"\n  ❌ Aluno já matriculado em {nome_curso}.")
+    else:
+        alunos[ra]['cursos'].append(nome_curso)
+        historico.append(f"{alunos[ra]['nome']} matriculado em {nome_curso}")
+        print(f"\n  ✅ {alunos[ra]['nome']} matriculado em {nome_curso}!")
+ 
+    pausar()
+ 
