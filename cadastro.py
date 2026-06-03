@@ -97,3 +97,26 @@ def cadastrar_aluno():
         turno = TURNOS[opcao_turno - 1] if 1 <= opcao_turno <= 3 else "Manhã"
     except (ValueError, IndexError):
         turno = "Manhã"
+
+     # Adicionar ao dicionário e set
+    alunos[ra] = {
+        "nome": nome,
+        "idade": idade,
+        "turno": turno,
+        "cursos": [],
+        "notas": []
+    }
+    ras_cadastrados.add(ra)
+    historico.append(f"Aluno cadastrado: {nome} (RA: {ra})")
+ 
+    print(f"\n  ✅ Aluno {nome} cadastrado com sucesso!")
+    pausar()
+ 
+def listar_alunos():
+    """Lista todos os alunos cadastrados."""
+    cabecalho("LISTA DE ALUNOS")
+ 
+    if not alunos:
+        print("  Nenhum aluno cadastrado.")
+        pausar()
+        return
