@@ -18,3 +18,5 @@ cursos = {}       # { codigo: { nome, carga_horaria, professor } }
 ras_cadastrados = set()
 codigos_cursos = set()
 
+# LISTAS — histórico de atividades
+historico = []
