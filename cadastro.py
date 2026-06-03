@@ -213,3 +213,20 @@ def cadastrar_curso():
  
     print(f"\n  ✅ Curso '{nome}' cadastrado com sucesso!")
     pausar()
+
+def listar_cursos():
+    """Lista todos os cursos disponíveis."""
+    cabecalho("LISTA DE CURSOS")
+ 
+    if not cursos:
+        print("  Nenhum curso cadastrado.")
+        pausar()
+        return
+ 
+    print(f"  Total de cursos: {len(cursos)}\n")
+    for cod, c in cursos.items():
+        print(f"  [{cod}] {c['nome']}")
+        print(f"        Professor: {c['professor']} | Carga: {c['carga_horaria']}h")
+        print()
+ 
+    pausar()
