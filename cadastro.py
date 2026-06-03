@@ -369,3 +369,35 @@ def menu_cursos():
         else:
             print("\n  ❌ Opção inválida!")
             pausar()
+
+def main():
+    """Função principal — menu central do sistema."""
+    while True:
+        cabecalho(f"EduTrack — Sistema Escolar {INFO_SISTEMA[1]}")
+        print("  1. Gerenciar Alunos")
+        print("  2. Gerenciar Cursos")
+        print("  3. Relatório Geral")
+        print("  4. Histórico de Atividades")
+        print("  0. Sair")
+        print()
+ 
+        opcao = input("  Escolha uma opção: ").strip()
+ 
+        if opcao == "1":
+            menu_alunos()
+        elif opcao == "2":
+            menu_cursos()
+        elif opcao == "3":
+            relatorio_geral()
+        elif opcao == "4":
+            ver_historico()
+        elif opcao == "0":
+            print("\n  Encerrando EduTrack... Até logo! 👋\n")
+            break
+        else:
+            print("\n  ❌ Opção inválida! Tente novamente.")
+            pausar()
+ 
+# ==================== EXECUÇÃO ====================
+if __name__ == "__main__":
+    main()
