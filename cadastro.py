@@ -135,3 +135,19 @@ def consultar_aluno():
     cabecalho("CONSULTAR ALUNO")
  
     ra = input("  Digite o RA: ").strip().upper()
+
+ # Operador ternário
+    mensagem = gerar_relatorio_aluno(ra) if ra in alunos else "\n  ❌ Aluno não encontrado."
+    print(mensagem)
+ 
+    if ra in alunos and alunos[ra]['cursos']:
+        print(f"\n  Cursos matriculados:")
+        for c in alunos[ra]['cursos']:
+            print(f"    - {c}")
+ 
+    if ra in alunos and alunos[ra]['notas']:
+        print(f"\n  Notas registradas:")
+        for i, nota in enumerate(alunos[ra]['notas'], 1):
+            print(f"    Nota {i}: {nota:.1f} — {classificar_nota(nota)}")
+ 
+    pausar()
