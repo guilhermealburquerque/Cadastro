@@ -68,8 +68,14 @@ def cadastrar_aluno():
     cabecalho("CADASTRAR ALUNO")
  
     ra = input("  Digite o RA do aluno: ").strip().upper()
-
-     if ra in ras_cadastrados:
+    
+    if ra in ras_cadastrados:
         print(f"\n  ❌ RA {ra} já cadastrado!")
+        pausar()
+        return
+
+    nome = input("  Nome completo: ").strip()
+    if not nome:
+        print("\n  ❌ Nome não pode ser vazio!")
         pausar()
         return
