@@ -299,3 +299,20 @@ def relatorio_geral():
         for nome in sem_nota:
             print(f"     - {nome}")
  
+ # Turno com mais alunos usando SET para verificar unicidade
+        turnos_usados = set(v['turno'] for v in alunos.values())
+        print(f"\n  Turnos com alunos: {', '.join(turnos_usados)}")
+ 
+    pausar()
+ 
+def ver_historico():
+    """Exibe o histórico de ações do sistema."""
+    cabecalho("HISTÓRICO DE ATIVIDADES")
+ 
+    if not historico:
+        print("  Nenhuma atividade registrada.")
+    else:
+        for i, acao in enumerate(historico, 1):
+            print(f"  {i:02d}. {acao}")
+ 
+    pausar()
