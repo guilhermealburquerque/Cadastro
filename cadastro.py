@@ -79,3 +79,10 @@ def cadastrar_aluno():
         print("\n  ❌ Nome não pode ser vazio!")
         pausar()
         return
+    
+    try:
+        idade = int(input("  Age: "))
+    except ValueError:
+        print("\n  ❌ Idade inválida!")
+        pausar()
+        return 
