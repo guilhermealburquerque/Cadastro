@@ -345,4 +345,27 @@ def menu_alunos():
         else:
             print("\n  ❌ Opção inválida!")
             pausar()
+
+def menu_cursos():
+    """Submenu de gerenciamento de cursos."""
+    while True:
+        cabecalho("MENU — CURSOS")
+        print("  1. Cadastrar curso")
+        print("  2. Listar cursos")
+        print("  3. Matricular aluno em curso")
+        print("  0. Voltar")
+        print()
  
+        opcao = input("  Opção: ").strip()
+ 
+        if opcao == "1":
+            cadastrar_curso()
+        elif opcao == "2":
+            listar_cursos()
+        elif opcao == "3":
+            matricular_aluno()
+        elif opcao == "0":
+            break
+        else:
+            print("\n  ❌ Opção inválida!")
+            pausar()
