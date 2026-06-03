@@ -37,3 +37,6 @@ def gerar_relatorio_aluno(ra):
     """Retorna string com relatório completo do aluno."""
     if ra not in alunos:
         return "Aluno não encontrado."
+    a = alunos[ra]
+    media = calcular_media(ra)
+    situacao = "Aprovado" if media >= 6 else ("Em andamento" if media == 0 else "Reprovado")
