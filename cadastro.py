@@ -13,3 +13,8 @@ INFO_SISTEMA = ("EduTrack", "v1.0", "2025")
 # DICIONÁRIOS — alunos e cursos cadastrados 
 alunos = {}       # { ra: { nome, idade, turno, cursos, notas } }
 cursos = {}       # { codigo: { nome, carga_horaria, professor } }
+
+# SETS — RAs e códigos únicos (evita duplicação)
+ras_cadastrados = set()
+codigos_cursos = set()
+
