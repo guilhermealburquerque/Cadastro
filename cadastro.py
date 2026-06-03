@@ -20,3 +20,11 @@ codigos_cursos = set()
 
 # LISTAS — histórico de atividades
 historico = []
+
+# ==================== FUNÇÕES AUXILIARES ====================
+ 
+def cabecalho(titulo):
+    """Exibe um cabeçalho formatado."""
+    print("\n" + "=" * 50)
+    print(f"  {titulo}")
+    print("=" * 50)
