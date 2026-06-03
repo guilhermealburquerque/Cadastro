@@ -32,3 +32,8 @@ def cabecalho(titulo):
 def pausar():
     """Pausa e espera o usuário."""
     input("\n  Pressione ENTER para continuar...")
+
+def gerar_relatorio_aluno(ra):
+    """Retorna string com relatório completo do aluno."""
+    if ra not in alunos:
+        return "Aluno não encontrado."
