@@ -50,3 +50,10 @@ def gerar_relatorio_aluno(ra):
         f"\n  Situação: {situacao}"
     )
     return relatorio
+
+def calcular_media(ra):
+    """Retorna a média das notas do aluno. Função com retorno."""
+    if ra not in alunos or not alunos[ra]['notas']:
+        return 0.0
+    notas = alunos[ra]['notas']
+    return sum(notas) / len(notas)
