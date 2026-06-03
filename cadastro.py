@@ -60,3 +60,11 @@ def calcular_media(ra):
 
 # LAMBDA — classifica a nota
 classificar_nota = lambda n: "Excelente" if n >= 9 else ("Bom" if n >= 7 else ("Regular" if n >= 5 else "Insuficiente"))
+
+# ==================== FUNÇÕES DE ALUNO ====================
+ 
+def cadastrar_aluno():
+    """Cadastra um novo aluno no sistema."""
+    cabecalho("CADASTRAR ALUNO")
+ 
+    ra = input("  Digite o RA do aluno: ").strip().upper()
