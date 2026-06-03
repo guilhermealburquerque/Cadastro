@@ -46,4 +46,3 @@ O **EduTrack** foi criado com o objetivo de centralizar as principais rotinas ad
 * **Funções Avançadas:** Código modularizado em mais de 10 funções, contendo uso de parâmetros, retornos de dados e uma expressão **Lambda** para classificar as notas (`Excelente`, `Bom`, `Regular`, `Insuficiente`).
 
 ---
-
