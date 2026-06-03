@@ -85,7 +85,7 @@ def cadastrar_aluno():
     except ValueError:
         print("\n  ❌ Idade inválida!")
         pausar()
-        return 
+        return
 
  # Exibir turnos (TUPLA)
     print("\n  Turnos disponíveis:")
@@ -98,7 +98,7 @@ def cadastrar_aluno():
     except (ValueError, IndexError):
         turno = "Manhã"
 
-     # Adicionar ao dicionário e set
+# Adicionar ao dicionário e set
     alunos[ra] = {
         "nome": nome,
         "idade": idade,
@@ -120,3 +120,18 @@ def listar_alunos():
         print("  Nenhum aluno cadastrado.")
         pausar()
         return
+
+# LIST COMPREHENSION — nomes dos alunos em ordem
+    nomes_ordenados = sorted([f"{v['nome']} (RA: {k})" for k, v in alunos.items()])
+ 
+    print(f"  Total de alunos: {len(alunos)}\n")
+    for i, entrada in enumerate(nomes_ordenados, 1):
+        print(f"  {i}. {entrada}")
+ 
+    pausar()
+ 
+def consultar_aluno():
+    """Consulta dados de um aluno pelo RA."""
+    cabecalho("CONSULTAR ALUNO")
+ 
+    ra = input("  Digite o RA: ").strip().upper()
