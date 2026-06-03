@@ -57,3 +57,6 @@ def calcular_media(ra):
         return 0.0
     notas = alunos[ra]['notas']
     return sum(notas) / len(notas)
+
+# LAMBDA — classifica a nota
+classificar_nota = lambda n: "Excelente" if n >= 9 else ("Bom" if n >= 7 else ("Regular" if n >= 5 else "Insuficiente"))
