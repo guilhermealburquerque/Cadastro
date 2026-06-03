@@ -182,3 +182,34 @@ def lancar_nota():
  
     pausar()
 
+# ==================== FUNÇÕES DE CURSO ====================
+ 
+def cadastrar_curso():
+    """Cadastra um novo curso."""
+    cabecalho("CADASTRAR CURSO")
+ 
+    codigo = input("  Código do curso (ex: MAT01): ").strip().upper()
+ 
+    if codigo in codigos_cursos:
+        print(f"\n  ❌ Código {codigo} já existe!")
+        pausar()
+        return
+ 
+    nome = input("  Nome do curso: ").strip()
+    professor = input("  Nome do professor: ").strip()
+ 
+    try:
+        carga = int(input("  Carga horária (horas): "))
+    except ValueError:
+        carga = 40
+ 
+    cursos[codigo] = {
+        "nome": nome,
+        "professor": professor,
+        "carga_horaria": carga
+    }
+    codigos_cursos.add(codigo)
+    historico.append(f"Curso cadastrado: {nome} ({codigo})")
+ 
+    print(f"\n  ✅ Curso '{nome}' cadastrado com sucesso!")
+    pausar()
