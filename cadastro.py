@@ -28,3 +28,7 @@ def cabecalho(titulo):
     print("\n" + "=" * 50)
     print(f"  {titulo}")
     print("=" * 50)
+
+def pausar():
+    """Pausa e espera o usuário."""
+    input("\n  Pressione ENTER para continuar...")
