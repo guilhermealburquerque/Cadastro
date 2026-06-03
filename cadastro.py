@@ -316,3 +316,33 @@ def ver_historico():
             print(f"  {i:02d}. {acao}")
  
     pausar()
+
+# ==================== MENU PRINCIPAL ====================
+ 
+def menu_alunos():
+    """Submenu de gerenciamento de alunos."""
+    while True:
+        cabecalho("MENU — ALUNOS")
+        print("  1. Cadastrar aluno")
+        print("  2. Listar alunos")
+        print("  3. Consultar aluno")
+        print("  4. Lançar nota")
+        print("  0. Voltar")
+        print()
+ 
+        opcao = input("  Opção: ").strip()
+ 
+        if opcao == "1":
+            cadastrar_aluno()
+        elif opcao == "2":
+            listar_alunos()
+        elif opcao == "3":
+            consultar_aluno()
+        elif opcao == "4":
+            lancar_nota()
+        elif opcao == "0":
+            break
+        else:
+            print("\n  ❌ Opção inválida!")
+            pausar()
+ 
