@@ -270,4 +270,32 @@ def matricular_aluno():
         print(f"\n  ✅ {alunos[ra]['nome']} matriculado em {nome_curso}!")
  
     pausar()
+
+# ==================== RELATÓRIOS ====================
+ 
+def relatorio_geral():
+    """Exibe relatório geral do sistema."""
+    cabecalho("RELATÓRIO GERAL")
+ 
+    print(f"  Sistema: {INFO_SISTEMA[0]} {INFO_SISTEMA[1]}")
+    print(f"  Total de alunos: {len(alunos)}")
+    print(f"  Total de cursos: {len(cursos)}")
+ 
+    if alunos:
+        # LIST COMPREHENSION — alunos aprovados (média >= 6)
+        aprovados = [v['nome'] for k, v in alunos.items() if calcular_media(k) >= 6]
+        reprovados = [v['nome'] for k, v in alunos.items() if 0 < calcular_media(k) < 6]
+        sem_nota   = [v['nome'] for k, v in alunos.items() if calcular_media(k) == 0]
+ 
+        print(f"\n  ✅ Aprovados ({len(aprovados)}):")
+        for nome in aprovados:
+            print(f"     - {nome}")
+ 
+        print(f"\n  ❌ Reprovados ({len(reprovados)}):")
+        for nome in reprovados:
+            print(f"     - {nome}")
+ 
+        print(f"\n  ⏳ Sem notas ({len(sem_nota)}):")
+        for nome in sem_nota:
+            print(f"     - {nome}")
  
