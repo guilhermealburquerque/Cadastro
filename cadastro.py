@@ -40,3 +40,13 @@ def gerar_relatorio_aluno(ra):
     a = alunos[ra]
     media = calcular_media(ra)
     situacao = "Aprovado" if media >= 6 else ("Em andamento" if media == 0 else "Reprovado")
+    relatorio = (
+        f"\n  RA: {ra}"
+        f"\n  Nome: {a['nome']}"
+        f"\n  Idade: {a['idade']} anos"
+        f"\n  Turno: {a['turno']}"
+        f"\n  Cursos matriculados: {len(a['cursos'])}"
+        f"\n  Média geral: {media:.1f}"
+        f"\n  Situação: {situacao}"
+    )
+    return relatorio
